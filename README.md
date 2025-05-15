@@ -1,25 +1,21 @@
-# ✨ Outfit Recommendation System 👕👗💡
+# ✨ Outfit Recommendation System 👕👗💡🤖
 
 
 ## 🛠 Tech Stack
-| Frontend                                                                                                                | Backend                                                                                                           | AI Integration                                                                                              | Styling                                                                                                                        | Auth                                                                                                              | Database                                                                                                                |
-| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-|`React.js`                 | ![Express](https://img.shields.io/badge/Express.js-000000?style=flat\&logo=express\&logoColor=white) `Express.js` | ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat\&logo=openai\&logoColor=white) `OpenAI API` | ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat\&logo=tailwind-css\&logoColor=white) `Tailwind CSS` | ![Google](https://img.shields.io/badge/Google_Auth-4285F4?style=flat\&logo=google\&logoColor=white) `Google Auth` | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat\&logo=postgresql\&logoColor=white) `PostgreSQL` |
-| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat\&logo=typescript\&logoColor=white) `TypeScript` | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat\&logo=node.js\&logoColor=white) `Node.js`       |                                                                                                             |                                                                                                                                |                                                                                                                   |                                                                                                                         |
+| **Frontend**                                                                                                                                                                                                                                                                                                 | **Backend**                                                                                                                                                                                                | **Styling**                                                                                                       | **Database**                                                                                                | **AI Integration**                                                                              | **Deployment**                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![React](https://img.shields.io/badge/-React-61DAFB?logo=react\&logoColor=white\&style=flat) <br> ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript\&logoColor=white\&style=flat) <br> ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite\&logoColor=white\&style=flat) | ![Express](https://img.shields.io/badge/-Express-000000?logo=express\&logoColor=white\&style=flat) <br> ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js\&logoColor=white\&style=flat) | ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?logo=tailwind-css\&logoColor=white\&style=flat) | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql\&logoColor=white\&style=flat) | ![OpenAI](https://img.shields.io/badge/-OpenAI-412991?logo=openai\&logoColor=white\&style=flat) | ![Vercel](https://img.shields.io/badge/-Vercel-000000?logo=vercel\&logoColor=white\&style=flat) <br> ![Render](https://img.shields.io/badge/-Render-46E3B7?logo=render\&logoColor=white\&style=flat) |
 
+## 🎯 Features
+👗 Outfit suggestions using OpenAI API
 
-## 🌟 Features
-✅ Personalized outfit suggestions using OpenAI GPT API
+🎨 Filter by gender, body type, season, and occasion
 
-✅ Filters by gender, occasion, season, and mood
+🔐 Google login integration
 
-✅ Google login for saved preferences
+📦 Dynamic product search (Amazon, Flipkart, Myntra links)
 
-✅ Modern, funky UI with Tailwind CSS
-
-✅ Mobile responsive
-
-✅ Express.js backend with PostgreSQL DB
+🧠 Smart styling and personalized looks
 
 ## 📸 Preview (Coming Soon)
 
