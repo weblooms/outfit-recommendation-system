@@ -1,20 +1,65 @@
+import { useEffect, useState } from "react";
 import Button from "../../common/Button";
+// Import Firebase auth functions
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 const Home: React.FC = () => {
-   return (
+  const [user, setUser] = useState<any>(null);
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, [auth]);
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Google login failed", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
+
+  const handleBrowse = () => {
+    if (user) {
+      navigate("/outfits");
+    } else {
+      handleGoogleLogin();
+    }
+  };
+
+  return (
     <div
-      className="min-h-screen bg-cover bg-center flex flex-col justify-between"
+      className="min-h-screen bg-cover bg-center flex flex-col justify-between relative"
       style={{
         backgroundImage:
           "url('https://img.freepik.com/free-photo/online-shopping-concept_23-2151896838.jpg?semt=ais_hybrid&w=740')",
       }}
     >
       {/* Overlay */}
-      <div className="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Top bar */}
       <div className="flex justify-end p-4 space-x-4 relative z-10">
-        <Button label="Login" variant="outlined" />
-        <Button label="Register" variant="outlined" />
+        {!user ? (
+          <>
+            <Button label="Login" variant="outlined" onClick={handleGoogleLogin} />
+            <Button label="Register" variant="outlined" onClick={handleGoogleLogin} />
+          </>
+        ) : (
+          <>
+            <div className="text-white">{user.displayName}</div>
+            <Button label="Logout" variant="outlined" onClick={handleLogout} />
+          </>
+        )}
       </div>
 
       {/* Center slogan */}
@@ -24,11 +69,12 @@ const Home: React.FC = () => {
         </h1>
       </div>
 
-      {/* Bottom button */}
+      {/* Bottom browse button */}
       <div className="flex justify-center p-6 relative z-10">
-        <Button label="Browse Outfits" />
+        <Button label="Browse Outfits" onClick={handleBrowse} variant="primary" />
       </div>
     </div>
   );
 };
+
 export default Home;
