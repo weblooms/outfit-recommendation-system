@@ -3,8 +3,10 @@ import Button from "../../common/Button";
 // Import Firebase auth functions
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-
-const Home: React.FC = () => {
+interface HomeProps {
+  setIsAuthenticated: (auth:boolean) => void
+}
+const Home: React.FC<HomeProps> = ({setIsAuthenticated}) => {
   const [user, setUser] = useState<any>(null);
   const auth = getAuth();
   const navigate = useNavigate();
@@ -22,6 +24,7 @@ const Home: React.FC = () => {
     } catch (error) {
       console.error("Google login failed", error);
     }
+setIsAuthenticated(true)
   };
 
   const handleLogout = async () => {
@@ -30,7 +33,7 @@ const Home: React.FC = () => {
 
   const handleBrowse = () => {
     if (user) {
-      navigate("/outfits");
+      navigate("/outfit");
     } else {
       handleGoogleLogin();
     }
